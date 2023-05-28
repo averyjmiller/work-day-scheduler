@@ -30,10 +30,8 @@ $(document).ready(function () {
   function hourUpdater() {
     var currentHour = dayjs().hour();
 
-    var presentBlockID = 'hour-' + currentHour;
-
     $('.time-block').each(function () {
-      if($(this).attr('id') == presentBlockID) {
+      if($(this).attr('id').slice(5) == currentHour) {
         $(this).addClass('present');
 
         if($(this).hasClass('future')) {
