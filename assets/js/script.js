@@ -1,6 +1,3 @@
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
 $(function () {
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
@@ -25,16 +22,53 @@ $(function () {
 // Starter code. 
 
 $(document).ready(function () {
+
   $('.saveBtn').on('click', function () {
     // get nearby values
   });
+
   function hourUpdater() {
     var currentHour = dayjs().hour();
-    // loop over time blocks
+
+    var presentBlockID = 'hour-' + currentHour;
+
     $('.time-block').each(function () {
+      if($(this).attr('id') == presentBlockID) {
+        $(this).addClass('present');
+
+        if($(this).hasClass('future')) {
+          $(this).removeClass('future');
+        }
+
+        if($(this).hasClass('past')) {
+          $(this).addClass('past');
+        }
+      } else if($(this).attr('id').slice(5) < currentHour) {
+        $(this).addClass('past');
+
+        if($(this).hasClass('present')) {
+          $(this).removeClass('present');
+        }
+
+        if($(this).hasClass('future')) {
+          $(this).removeClass('future');
+        }
+      } else {
+        $(this).addClass('future');
+
+        if($(this).hasClass('present')) {
+          $(this).removeClass('present');
+        }
+
+        if($(this).hasClass('past')) {
+          $(this).addClass('past');
+        }
+      }
     });
   }
+
   hourUpdater();
+
   setInterval(hourUpdater, 15000);
   // load any saved data from localStorage
   $('#hour-9 .description').val(localStorage.getItem('hour-9'));
