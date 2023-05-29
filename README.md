@@ -19,5 +19,13 @@
 ---
 ![Deployed Application](./assets/images/deployed-page.jpg)
 
+## Credits
+**Third-Party APIs**
+* [Bootstrap v5.1.3](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
+* [jQuery v3.4.1](https://jquery.com/download/)
+* [Day.js v1.11.3](https://day.js.org/docs/en/installation/browser)
+* [Font Awesome v5.8.1](https://fontawesome.com/start)
+* [Google Fonts](https://fonts.google.com/)
+
 ## License
 Please refer to the ```LICENSE``` in the repo.
