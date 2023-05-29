@@ -12,7 +12,10 @@
 $(document).ready(function () {
 
   $('.saveBtn').on('click', function () {
-    // get nearby values
+    var timeBlock = $(this).parent();
+    var event = timeBlock.find('.description').val();
+
+    localStorage.setItem(timeBlock.attr('id'), event);
   });
 
   function hourUpdater() {
@@ -56,8 +59,14 @@ $(document).ready(function () {
   hourUpdater();
 
   setInterval(hourUpdater, 15000);
+
   // load any saved data from localStorage
-  $('#hour-9 .description').val(localStorage.getItem('hour-9'));
+  $('.time-block').each(function() {
+    var storageName = $(this).attr('id');
+
+    $(this).find('.description').val(localStorage.getItem(storageName));
+  });
+  
   // display current day on page
   $('#currentDay').text(dayjs().format('dddd, MMMM D, YYYY'));
 });
