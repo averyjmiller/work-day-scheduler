@@ -6,6 +6,11 @@ $(document).ready(function () {
     var event = timeBlock.find('.description').val();
 
     localStorage.setItem(timeBlock.attr('id'), event);
+
+    $('.save-confirmation').text('✅ Appointment added to storage');
+    setInterval(function() {
+      $('.save-confirmation').text('');
+    }, 10000);
   });
 
   // Loops through the time blocks and color-codes them based on the current hour of the day
