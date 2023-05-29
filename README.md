@@ -4,7 +4,7 @@
 A browser ran calendar application that features dynamically updated HTML and CSS powered by jQuery. User's are able to save events for each hour of the day.
 
 ## Installation
-1. Run the Work Day Scheduler either through the deployed GitHub Page found at ```https://averyjmiller.github.io/work-day-scheduler/``` or on your local machine. **Note:** If you are choosing to run the application on your local machine, you must also run a live server.
+1. Run the Work Day Scheduler either through the [deployed GitHub Page](https://averyjmiller.github.io/work-day-scheduler/) found at or on your local machine. *Note: If you are choosing to run the application on your local machine, you must run it with a live server.*
 
 ## Usage
 1. Time blocks are color-coded based on the current hour of the day.
