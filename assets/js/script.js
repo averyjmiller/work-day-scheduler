@@ -26,7 +26,7 @@ $(document).ready(function () {
         }
 
         if($(this).hasClass('past')) {
-          $(this).addClass('past');
+          $(this).removeClass('past');
         }
       } else if($(this).attr('id').slice(5) < currentHour) {
         $(this).addClass('past');
@@ -46,7 +46,7 @@ $(document).ready(function () {
         }
 
         if($(this).hasClass('past')) {
-          $(this).addClass('past');
+          $(this).removeClass('past');
         }
       }
     });
