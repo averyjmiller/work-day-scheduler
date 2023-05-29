@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+  // Events are saved to local storage
   $('.saveBtn').on('click', function () {
     var timeBlock = $(this).parent();
     var event = timeBlock.find('.description').val();
@@ -7,6 +8,7 @@ $(document).ready(function () {
     localStorage.setItem(timeBlock.attr('id'), event);
   });
 
+  // Loops through the time blocks and color-codes them based on the current hour of the day
   function hourUpdater() {
     var currentHour = dayjs().hour();
 
@@ -45,17 +47,19 @@ $(document).ready(function () {
     });
   }
 
+  // Initializes the time blocks
   hourUpdater();
 
+  // Updates the time blocks every 15 seconds
   setInterval(hourUpdater, 15000);
 
-  // load any saved data from localStorage
+  // Retrieves saved events from local storage and sets it to the text area for the corresponding time block
   $('.time-block').each(function() {
     var storageName = $(this).attr('id');
 
     $(this).find('.description').val(localStorage.getItem(storageName));
   });
   
-  // display current day on page
+  // display the current day on the page
   $('#currentDay').text(dayjs().format('dddd, MMMM D, YYYY'));
 });
