@@ -66,12 +66,12 @@ $(document).ready(function () {
   });
   
   // display the current day on the page
-  function currentDayUpdater() {
+  function dayUpdater() {
     $('#currentDay').text(dayjs().format('dddd, MMMM D, YYYY'));
   }
 
-  currentDayUpdater();
+  dayUpdater();
 
   // Updates the displayed current day on the page every 60 seconds
-  setInterval(currentDayUpdater, 60000);
+  setInterval(dayUpdater, 60000);
 });
